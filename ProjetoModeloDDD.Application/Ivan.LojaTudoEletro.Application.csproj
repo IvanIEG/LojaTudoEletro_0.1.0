@@ -8,8 +8,8 @@
     <ProjectGuid>{5F97B8F2-4E70-4933-9C3C-30F4D9C28A52}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProjetoModeloDDD.Application</RootNamespace>
-    <AssemblyName>ProjetoModeloDDD.Application</AssemblyName>
+    <RootNamespace>Ivan.LojaTudoEletro.Application</RootNamespace>
+    <AssemblyName>Ivan.LojaTudoEletro.Application</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

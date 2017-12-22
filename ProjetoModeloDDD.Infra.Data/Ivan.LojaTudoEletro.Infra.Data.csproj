@@ -8,8 +8,8 @@
     <ProjectGuid>{1D7DFF37-38D8-43ED-932D-0D612012DC91}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProjetoModeloDDD.Infra.Data</RootNamespace>
-    <AssemblyName>ProjetoModeloDDD.Infra.Data</AssemblyName>
+    <RootNamespace>Ivan.LojaTudoEletro.Infra.Data</RootNamespace>
+    <AssemblyName>Ivan.LojaTudoEletro.Infra.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

@@ -1,8 +1,9 @@
 ﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Ivan.LojaTudoEletro.ProjetoModelo.MVC.AutoMapper;
 
-namespace ProjetoModelo.mvc
+namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC
 {
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -12,7 +13,7 @@ namespace ProjetoModelo.mvc
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            AutoMapper.AutoMapperConfig.RegisterMappings();
+            AutoMapperConfig.RegisterMappings();
         }
     }
 }

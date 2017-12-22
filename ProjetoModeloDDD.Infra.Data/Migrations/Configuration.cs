@@ -1,18 +1,16 @@
-namespace ProjetoModeloDDD.Infra.Data.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+using System.Data.Entity.Migrations;
+using Ivan.LojaTudoEletro.Infra.Data.Contexto;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ProjetoModeloDDD.Infra.Data.Contexto.ProjetoModeloContexto>
+namespace Ivan.LojaTudoEletro.Infra.Data.Migrations
+{
+    internal sealed class Configuration : DbMigrationsConfiguration<ProjetoModeloContexto>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(ProjetoModeloDDD.Infra.Data.Contexto.ProjetoModeloContexto context)
+        protected override void Seed(ProjetoModeloContexto context)
         {
             //  This method will be called after migrating to the latest version.
 

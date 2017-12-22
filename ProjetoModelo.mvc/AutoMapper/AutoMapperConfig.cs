@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
-namespace ProjetoModelo.mvc.AutoMapper
+
+namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.AutoMapper
 {
     public class AutoMapperConfig
     {

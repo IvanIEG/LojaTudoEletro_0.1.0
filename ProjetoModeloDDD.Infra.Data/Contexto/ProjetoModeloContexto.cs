@@ -1,11 +1,11 @@
 ﻿using System;
-using ProjetoModeloDDD.Domain.Entities;
-using System.Linq;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using ProjetoModeloDDD.Infra.Data.EntityConfig;
+using System.Linq;
+using Ivan.LojaTudoEletro.Domain.Entities;
+using Ivan.LojaTudoEletro.Infra.Data.EntityConfig;
 
-namespace ProjetoModeloDDD.Infra.Data.Contexto
+namespace Ivan.LojaTudoEletro.Infra.Data.Contexto
 {
     public class ProjetoModeloContexto : DbContext
         

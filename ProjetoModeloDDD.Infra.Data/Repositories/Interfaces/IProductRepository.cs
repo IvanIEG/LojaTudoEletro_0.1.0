@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ProjetoModeloDDD.Domain.Entities;
+﻿using System.Collections.Generic;
+using Ivan.LojaTudoEletro.Domain.Entities;
 
-namespace ProjetoModeloDDD.Infra.Data.Repositories.Interfaces
+namespace Ivan.LojaTudoEletro.Infra.Data.Repositories.Interfaces
 {
    public  interface IProductRepository : IRepositoryBase<Product>
     {

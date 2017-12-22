@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using System.Web;
+using Ivan.LojaTudoEletro.ProjetoModelo.MVC.ViewsModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using ProjetoModelo.mvc.Models;
 
-namespace ProjetoModelo.mvc
+namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC
 {
     public class EmailService : IIdentityMessageService
     {

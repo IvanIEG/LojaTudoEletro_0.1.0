@@ -1,7 +1,7 @@
-﻿using ProjetoModeloDDD.Domain.Entities;
-using ProjetoModeloDDD.Infra.Data.Repositories.Interfaces;
+﻿using Ivan.LojaTudoEletro.Domain.Entities;
+using Ivan.LojaTudoEletro.Infra.Data.Repositories.Interfaces;
 
-namespace ProjetoModeloDDD.Infra.Data.Repositories
+namespace Ivan.LojaTudoEletro.Infra.Data.Repositories
 {
     public class ClienteRepository:RepositoryBase<Cliente>,IClienteRepository
     {

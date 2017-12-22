@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using AutoMapper;
-using ProjetoModelo.mvc.ViewsModels;
-using ProjetoModeloDDD.Domain.Entities;
+﻿using AutoMapper;
+using Ivan.LojaTudoEletro.Domain.Entities;
+using Ivan.LojaTudoEletro.ProjetoModelo.MVC.ViewsModels;
 
-namespace ProjetoModelo.mvc.AutoMapper
+namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.AutoMapper
 {
     public class ViewModelToDomainMappings : Profile
     {

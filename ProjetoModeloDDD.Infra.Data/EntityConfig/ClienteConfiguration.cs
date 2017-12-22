@@ -1,7 +1,7 @@
-﻿using ProjetoModeloDDD.Domain.Entities;
-using System.Data.Entity.ModelConfiguration;
+﻿using System.Data.Entity.ModelConfiguration;
+using Ivan.LojaTudoEletro.Domain.Entities;
 
-namespace ProjetoModeloDDD.Infra.Data.EntityConfig
+namespace Ivan.LojaTudoEletro.Infra.Data.EntityConfig
 {
     public  class ClienteConfiguration: EntityTypeConfiguration<Cliente>
     {

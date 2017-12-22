@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ProjetoModeloDDD.Infra.Data.Contexto;
-using ProjetoModeloDDD.Infra.Data.Repositories.Interfaces;
+using Ivan.LojaTudoEletro.Infra.Data.Contexto;
+using Ivan.LojaTudoEletro.Infra.Data.Repositories.Interfaces;
 
-namespace ProjetoModeloDDD.Infra.Data.Repositories
+namespace Ivan.LojaTudoEletro.Infra.Data.Repositories
 {
     public class RepositoryBase<TEntity> : IDisposable, IRepositoryBase<TEntity> where TEntity : class
     {

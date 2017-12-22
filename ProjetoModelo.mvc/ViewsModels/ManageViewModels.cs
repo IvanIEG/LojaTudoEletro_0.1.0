@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace ProjetoModelo.mvc.Models
+namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.ViewsModels
 {
     public class IndexViewModel
     {

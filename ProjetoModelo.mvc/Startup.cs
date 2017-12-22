@@ -1,8 +1,9 @@
-﻿using Microsoft.Owin;
+﻿using Ivan.LojaTudoEletro.ProjetoModelo.MVC;
+using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(ProjetoModelo.mvc.Startup))]
-namespace ProjetoModelo.mvc
+[assembly: OwinStartup(typeof(Startup))]
+namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC
 {
     public partial class Startup
     {

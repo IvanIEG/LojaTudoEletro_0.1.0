@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-
-namespace ProjetoModelo.mvc.ViewsModels
+namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.ViewsModels
 {
     public class ClienteViewModel
     {

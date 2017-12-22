@@ -1,13 +1,12 @@
 ﻿using System;
+using Ivan.LojaTudoEletro.ProjetoModelo.MVC.ViewsModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
 using Owin;
-using ProjetoModelo.mvc.Models;
 
-namespace ProjetoModelo.mvc
+namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC
 {
     public partial class Startup
     {

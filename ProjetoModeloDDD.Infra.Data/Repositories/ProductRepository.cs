@@ -1,10 +1,9 @@
-﻿using ProjetoModeloDDD.Domain.Entities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using ProjetoModeloDDD.Infra.Data.Contexto;
-using ProjetoModeloDDD.Infra.Data.Repositories.Interfaces;
+using Ivan.LojaTudoEletro.Domain.Entities;
+using Ivan.LojaTudoEletro.Infra.Data.Repositories.Interfaces;
 
-namespace ProjetoModeloDDD.Infra.Data.Repositories
+namespace Ivan.LojaTudoEletro.Infra.Data.Repositories
 {
     public class ProductRepository: RepositoryBase<Product>, IProductRepository
     {

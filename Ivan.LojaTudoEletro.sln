@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{012740EF-1746-4074-AABA-C1DD43A43D8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ivan.LojaTudoEletro.ProjetoModelo.mvc", "ProjetoModelo.mvc\Ivan.LojaTudoEletro.ProjetoModelo.mvc.csproj", "{9DF5B502-4AA9-4506-B847-BF0E854B8B05}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ivan.LojaTudoEletro.ProjetoModelo.MVC", "ProjetoModelo.mvc\Ivan.LojaTudoEletro.ProjetoModelo.MVC.csproj", "{9DF5B502-4AA9-4506-B847-BF0E854B8B05}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ivan.LojaTudoEletro.Domain", "ProjetoModeloDDD.Domain\Ivan.LojaTudoEletro.Domain.csproj", "{25FCE763-7CD0-4CC4-9A11-8D78C5160E55}"
 EndProject

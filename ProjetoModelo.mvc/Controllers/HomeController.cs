@@ -1,4 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
+using Ivan.LojaTudoEletro.Domain.Entities;
+using Ivan.LojaTudoEletro.Services;
 
 namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
 {
@@ -6,7 +9,11 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var products = new List<Product>();
+            var productServices = new ProductServices();
+            products = productServices.ReturnProductsSellof();
+
+            return View("Index", products);
         }
 
         public ActionResult About()

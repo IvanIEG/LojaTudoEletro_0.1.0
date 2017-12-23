@@ -7,11 +7,11 @@ using Ivan.LojaTudoEletro.Infra.Data.EntityConfig;
 
 namespace Ivan.LojaTudoEletro.Infra.Data.Contexto
 {
-    public class ProjetoModeloContexto : DbContext
+    public class ProjetoTudoEletroContexto : DbContext
         
     {
-        public ProjetoModeloContexto()
-            :base("ProjetoModeloContexto")
+        public ProjetoTudoEletroContexto()
+            :base("ProjetoTudoEletroContexto")
         {
             
         }

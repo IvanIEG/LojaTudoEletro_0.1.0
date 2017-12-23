@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ivan.LojaTudoEletro.Infra.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ivan.LojaTudoEletro.Application", "ProjetoModeloDDD.Application\Ivan.LojaTudoEletro.Application.csproj", "{5F97B8F2-4E70-4933-9C3C-30F4D9C28A52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ivan.LojaTudoEletro.Services", "Ivan.LojaTudoEletro.Services\Ivan.LojaTudoEletro.Services.csproj", "{48B93256-F40B-403C-B269-1BE7DFC9F915}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{5F97B8F2-4E70-4933-9C3C-30F4D9C28A52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F97B8F2-4E70-4933-9C3C-30F4D9C28A52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F97B8F2-4E70-4933-9C3C-30F4D9C28A52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48B93256-F40B-403C-B269-1BE7DFC9F915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48B93256-F40B-403C-B269-1BE7DFC9F915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48B93256-F40B-403C-B269-1BE7DFC9F915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48B93256-F40B-403C-B269-1BE7DFC9F915}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{25FCE763-7CD0-4CC4-9A11-8D78C5160E55} = {F66219F3-D783-4314-B26D-817A813F537E}
 		{1D7DFF37-38D8-43ED-932D-0D612012DC91} = {012740EF-1746-4074-AABA-C1DD43A43D8D}
 		{5F97B8F2-4E70-4933-9C3C-30F4D9C28A52} = {8C75707E-1093-4E06-A264-517FAEFC622E}
+		{48B93256-F40B-403C-B269-1BE7DFC9F915} = {00407585-905E-426B-BA1B-05D1A4D120F3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3F048A91-B008-4449-9E11-2CCDC6FC1174}

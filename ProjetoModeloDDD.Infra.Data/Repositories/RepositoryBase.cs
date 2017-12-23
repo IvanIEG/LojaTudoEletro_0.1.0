@@ -9,7 +9,7 @@ namespace Ivan.LojaTudoEletro.Infra.Data.Repositories
 {
     public class RepositoryBase<TEntity> : IDisposable, IRepositoryBase<TEntity> where TEntity : class
     {
-        protected ProjetoModeloContexto Db = new ProjetoModeloContexto();
+        protected ProjetoTudoEletroContexto Db = new ProjetoTudoEletroContexto();
 
         public void Add(TEntity obj)
         {

@@ -3,14 +3,14 @@ using Ivan.LojaTudoEletro.Infra.Data.Contexto;
 
 namespace Ivan.LojaTudoEletro.Infra.Data.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<ProjetoModeloContexto>
+    internal sealed class Configuration : DbMigrationsConfiguration<ProjetoTudoEletroContexto>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(ProjetoModeloContexto context)
+        protected override void Seed(ProjetoTudoEletroContexto context)
         {
             //  This method will be called after migrating to the latest version.
 

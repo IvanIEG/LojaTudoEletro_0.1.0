@@ -9,14 +9,17 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
     public class HomeController : Controller
 
     {
-        private IProductRepository iProductRepository;
-        
+        readonly IProductServices _productServices;
+
+        public HomeController(IProductServices productServices)
+        {
+            this._productServices = productServices;
+        }
+
         public ActionResult Index()
         {
-            var products = new List<Product>();
-            var productServices = new ProductServices(iProductRepository);
-            products = productServices.ReturnProductsSellof();
-            return View("Index", products);
+            var model = _productServices.ReturnProductsSellof();
+            return View("Index", model);
         }
 
         public ActionResult About()

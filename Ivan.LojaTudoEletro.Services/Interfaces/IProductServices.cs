@@ -7,8 +7,8 @@ using Ivan.LojaTudoEletro.Domain.Entities;
 
 namespace Ivan.LojaTudoEletro.Services.Interfaces
 {
-    public interface IProductRepository
+    public interface IProductServices
     {
-        List<Product> ReturnProductsSellof();
+        IEnumerable<Product> ReturnProductsSellof();
  }
 }

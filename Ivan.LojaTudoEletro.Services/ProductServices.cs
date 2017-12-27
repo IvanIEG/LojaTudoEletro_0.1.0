@@ -1,33 +1,30 @@
 ﻿using System.Collections.Generic;
 using Ivan.LojaTudoEletro.Domain.Entities;
-
+using Ivan.LojaTudoEletro.Infra.Data.Repositories.Interfaces;
 using Ivan.LojaTudoEletro.Services.Interfaces;
 
 
 namespace Ivan.LojaTudoEletro.Services
 {
-    public class ProductServices : IServicesBase
+    public class ProductServices : IServicesBase, IProductServices
     {
-        private IProductRepository iProductRepository;
+        private readonly IProductRepository _IproductRepository;
 
-        public ProductServices(IProductRepository _iProductRepository)
+        public ProductServices(IProductRepository iProductRepository)
         {
-            this.iProductRepository = _iProductRepository;
+            this._IproductRepository = iProductRepository;
         }
 
 
-        public List<Product> ReturnProductsSellof()
+        public IEnumerable<Product> ReturnProductsSellof()
 
         {
-            var products = new List<Product>();
-            return products = iProductRepository.ReturnProductsSellof();
+
+            return _IproductRepository.BuscarProdutosComDesconto();
 
 
         }
 
-        public void Dispose()
-        {
-
-        }
+        
     }
 }

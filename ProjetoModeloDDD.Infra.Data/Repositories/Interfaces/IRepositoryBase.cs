@@ -15,7 +15,6 @@ namespace Ivan.LojaTudoEletro.Infra.Data.Repositories.Interfaces
 
         void Remove(TEntity obj);
 
-        void Dispose();
 
     }
 }

@@ -7,7 +7,7 @@ using Ivan.LojaTudoEletro.Infra.Data.Repositories.Interfaces;
 
 namespace Ivan.LojaTudoEletro.Infra.Data.Repositories
 {
-    public class RepositoryBase<TEntity> : IDisposable, IRepositoryBase<TEntity> where TEntity : class
+    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : class
     {
         protected ProjetoTudoEletroContexto Db = new ProjetoTudoEletroContexto();
 
@@ -39,14 +39,6 @@ namespace Ivan.LojaTudoEletro.Infra.Data.Repositories
             Db.SaveChanges();
         }
 
-        void IRepositoryBase<TEntity>.Dispose()
-        {
-            throw new NotImplementedException();
-        }
 
-        void IDisposable.Dispose()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

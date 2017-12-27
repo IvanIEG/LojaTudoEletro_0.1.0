@@ -2,7 +2,7 @@
 
 namespace Ivan.LojaTudoEletro.Services.Interfaces
 {
-    public interface IServicesBase:IDisposable{
+    public interface IServicesBase{
       
 
     }

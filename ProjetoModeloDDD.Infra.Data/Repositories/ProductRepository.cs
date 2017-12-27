@@ -5,7 +5,7 @@ using Ivan.LojaTudoEletro.Infra.Data.Repositories.Interfaces;
 
 namespace Ivan.LojaTudoEletro.Infra.Data.Repositories
 {
-    public class ProductRepository: RepositoryBase<Product>, IProductRepository
+    public class ProductRepository : RepositoryBase<Product>, IProductRepository
     {
         public IEnumerable<Product> BuscarPorNome(string nome)
         {
@@ -19,6 +19,10 @@ namespace Ivan.LojaTudoEletro.Infra.Data.Repositories
         public IEnumerable<Product> BuscarProdutosComDesconto()
         {
             return Db.Products.Where(p => p.Selloff == true);
+        }
+
+        public ProductRepository()
+        {
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using SimpleInjector;
+﻿using SimpleInjector;
 using Ivan.LojaTudoEletro.Services;
 using Ivan.LojaTudoEletro.Services.Interfaces;
 using Ivan.LojaTudoEletro.Infra.Data.Repositories.Interfaces;

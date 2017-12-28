@@ -1,6 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using Ivan.LojaTudoEletro.Domain.Entities;
-using JetBrains.ReSharper.Feature.Services.Html;
 
 namespace Ivan.LojaTudoEletro.Infra.Data.EntityConfig
 {

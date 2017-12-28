@@ -18,7 +18,7 @@ namespace Ivan.LojaTudoEletro.Infra.Data.Repositories
         /// <returns>Lista de produtos com desconto</returns>
         public IEnumerable<Product> BuscarProdutosComDesconto()
         {
-            return Db.Products.Where(p => p.Selloff == true);
+            return Db.Products.Where(p => p.Selloff == true).ToList();
         }
 
         public ProductRepository()

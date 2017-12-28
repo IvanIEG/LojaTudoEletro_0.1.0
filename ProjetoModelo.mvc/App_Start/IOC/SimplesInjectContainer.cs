@@ -12,8 +12,9 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.IOC
     {
         public static Container RegisterServices()
         {
-            var container = new Container();
+            Container container = new Container();
 
+           
             container.Register<IProductServices, ProductServices>();
             container.Register<IProductRepository, ProductRepository>();
             container.Verify();

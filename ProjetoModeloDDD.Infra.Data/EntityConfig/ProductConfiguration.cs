@@ -18,9 +18,9 @@ namespace Ivan.LojaTudoEletro.Infra.Data.EntityConfig
             Property(p => p.ClienteId)
                 .IsOptional();
             //relacionamento cliente tem vários produtos
-            //HasRequired(p => p.Cliente)
-            //    .WithMany()
-            //    .HasForeignKey(p => p.ClienteId);
+            HasRequired(p => p.Cliente)
+                .WithMany()
+                .HasForeignKey(p => p.ClienteId);
         }
     }
 }

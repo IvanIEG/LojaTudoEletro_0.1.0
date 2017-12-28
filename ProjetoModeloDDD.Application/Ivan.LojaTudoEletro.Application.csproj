@@ -209,6 +209,9 @@
       <HintPath>..\packages\JetBrains.Should.1.1.20\lib\Should.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SimpleInjector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.2.0.0\lib\net40-client\SimpleInjector.dll</HintPath>
+    </Reference>
     <Reference Include="Sprache, Version=2.1.0.0, Culture=neutral, PublicKeyToken=f763bc865f9b2be9, processorArchitecture=MSIL">
       <HintPath>..\packages\Sprache.JetBrains.2.1.0\lib\net40\Sprache.dll</HintPath>
       <Private>True</Private>

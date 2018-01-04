@@ -219,7 +219,9 @@
     <Compile Include="AutoMapper\ViewModelToDomainMapping.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UploadFileController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -298,6 +300,7 @@
     <Content Include="Content\js\easyResponsiveTabs.js" />
     <Content Include="Content\js\index.js" />
     <Content Include="Content\js\jquery-1.7.2.min.js" />
+    <Content Include="Content\js\jquery-1.8.2.js" />
     <Content Include="Content\js\jquery.accordion.js" />
     <Content Include="Content\js\jquery.easing.js" />
     <Content Include="Content\js\move-top.js" />
@@ -347,6 +350,13 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\UploadFile\Succes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

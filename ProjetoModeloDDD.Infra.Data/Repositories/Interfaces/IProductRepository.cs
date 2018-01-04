@@ -6,6 +6,6 @@ namespace Ivan.LojaTudoEletro.Infra.Data.Repositories.Interfaces
    public  interface IProductRepository : IRepositoryBase<Product>
     {
         IEnumerable<Product> BuscarPorNome(string nome);
-        IEnumerable<Product> BuscarProdutosComDesconto();
+      
     }
 }

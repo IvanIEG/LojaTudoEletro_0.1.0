@@ -278,10 +278,13 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Contexto\ProjetoModeloContexto.cs" />
     <Compile Include="EntityConfig\ClienteConfiguration.cs" />
+    <Compile Include="EntityConfig\ImagemConfiguration.cs" />
     <Compile Include="EntityConfig\ProductConfiguration.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\ClienteRepository.cs" />
+    <Compile Include="Repositories\ImagemRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IImagemRepository.cs" />
     <Compile Include="Repositories\Interfaces\IProductRepository.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />

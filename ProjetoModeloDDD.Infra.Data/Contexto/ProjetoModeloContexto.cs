@@ -19,7 +19,7 @@ namespace Ivan.LojaTudoEletro.Infra.Data.Contexto
 
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Product> Products { get; set; }
-  
+        public DbSet<Imagem>  Imagens  { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -39,6 +39,7 @@ namespace Ivan.LojaTudoEletro.Infra.Data.Contexto
 
             modelBuilder.Configurations.Add(new ClienteConfiguration());
             modelBuilder.Configurations.Add(new ProductConfiguration());
+            modelBuilder.Configurations.Add(new ImagemConfiguration());
         }
 
 

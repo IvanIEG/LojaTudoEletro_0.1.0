@@ -9,5 +9,5 @@ namespace Ivan.LojaTudoEletro.Services.Interfaces
     public interface IProductServices
     {
         IEnumerable<Product> ReturnProductsSellof();
- }
+    }
 }

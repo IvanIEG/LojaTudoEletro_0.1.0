@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Ivan.LojaTudoEletro.Domain.Entities;
 
 namespace Ivan.LojaTudoEletro.Services.Interfaces
@@ -9,5 +6,18 @@ namespace Ivan.LojaTudoEletro.Services.Interfaces
     public interface IProductServices
     {
         IEnumerable<Product> ReturnProductsSellof();
+
+        IEnumerable<Product> GetAllProducts();
+
+        void AddProduct(Product product);
+
+        Product GetProduct(int id);
+
+        void DeleteProduct(Product product);
+
+        void EditProduct(Product product);
+
+        Product DetailsProduct(int id);
     }
+
 }

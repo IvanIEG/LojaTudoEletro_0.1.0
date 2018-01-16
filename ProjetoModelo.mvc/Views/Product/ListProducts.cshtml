@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Ivan.LojaTudoEletro.ProjetoModelo.MVC.ViewsModels.ProductViewModel>
+
+@{
+    ViewBag.Title = "Produtos cadastrados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de produtos cadastrados</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar novo produto", "Create")
+</p>
+<table class="table table-striped table ">
+    <tr>
+
+
+        <th>
+
+            @Html.DisplayName("Imagem Principal")
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.Selloff)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr  style="white-space: nowrap"> 
+            <div class="container">
+
+                @foreach (var imagem in item.Imagens)
+                {
+                    if (imagem.ehPrincipal == true)
+                    {
+                        <td>
+                            <img src="~/Content/uploads/fotosProdutos/@imagem.UrlImagem" width="120" height="120" />
+                        </td>
+                    }
+                }
+            </div>
+            <td>
+
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Selloff)
+            </td>
+
+            <td class="btn btn- alert- alert-danger">
+                @Html.ActionLink("Editar", "Edit", new { id = item.ProductId })
+            </td>
+
+            <td class="btn btn-info">
+                @Html.ActionLink("Detalhes", "Details", new { id = item.ProductId })
+            </td>
+
+            <td class="btn btn-danger">
+                @Html.ActionLink("Excluir ", "Delete", new { id = item.ProductId })
+            </td>
+
+        </tr>
+    }
+
+</table>

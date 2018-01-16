@@ -1,35 +1,19 @@
-﻿@model Ivan.LojaTudoEletro.Domain.Entities.Product
+﻿@model Ivan.LojaTudoEletro.ProjetoModelo.MVC.ViewsModels.ProductViewModel
 
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Cadastro de produtos</h2>
 
 
-@using(Html.BeginForm("Process", "UploadFile", FormMethod.Post, new {enctype = "multipart/form-data"}))
-{
-    @ViewBag
-    <table cellpadding="2" cellspacing="2">
-        <tr>
-            <td>Fotos do produto</td>
-            <td><input type="file" name="foto"/></td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td><input type="submit" value="Upload"/></td>
-        </tr>
-    </table>
-
-}
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Process", "UploadFile", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Product</h4>
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -57,14 +41,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.Details, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Details, new { htmlAttributes = new { @class = "form-control" } })
@@ -81,31 +57,58 @@
                 </div>
             </div>
         </div>
-
+        <h3></h3>
         <div class="form-group">
-            @Html.LabelFor(model => model.ClienteID, "ClienteId", htmlAttributes: new { @class = "control-label col-md-2" })
+            @{
+                object htmlAttributes;
+            }
+            @Html.LabelFor(model => model.ImagensProduto, htmlAttributes = new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ClienteId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ClienteID, "", new { @class = "text-danger" })
+                <span class="btn btn-default btn-file"></span>
+                @Html.TextBoxFor(modelo => Model.ImagensProduto, new { type = "file" })
             </div>
         </div>
-        
 
+        <div class="form-group">
+            @{
+                object htmlAttributes2;
+            }
+            @Html.LabelFor(model => model.ImagensProduto, htmlAttributes2 = new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <span class="btn btn-default btn-file"></span>
+                @Html.TextBoxFor(modelo => Model.ImagensProduto, new { type = "file" })
+            </div>
+        </div>
 
+        <div class="form-group">
+            @{
+                object htmlAttributes3;
+            }
+            @Html.LabelFor(model => model.ImagensProduto, htmlAttributes3 = new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <span class="btn btn-default btn-file"></span>
+                @Html.TextBoxFor(modelo => Model.ImagensProduto, new { type = "file" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @{
+                object htmlAttributes4;
+            }
+            @Html.LabelFor(model => model.ImagensProduto, htmlAttributes4 = new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <span class="btn btn-default btn-file"></span>
+                @Html.TextBoxFor(modelo => Model.ImagensProduto, new { type = "file" })
+            </div>
+        </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-success" />
             </div>
         </div>
-
-
-
-
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Lista de produtos cadastrados", "ListProducts")
 </div>
-
-

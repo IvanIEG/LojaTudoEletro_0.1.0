@@ -1,0 +1,99 @@
+﻿
+@using System.Web.Mvc.Html
+@model Ivan.LojaTudoEletro.ProjetoModelo.MVC.ViewsModels.ProductViewModel
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var producViewModel = TempData["productViewModelTemp"] = Model;
+}
+
+<h2>Excluir</h2>
+
+<h3>Você tem certeza de que deseja excluir este ítem?</h3>
+
+@using (Html.BeginForm("Delete", "Product", producViewModel))
+{
+
+    <div>
+
+        <hr/>
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayName("Imagem: ")
+            </dt>
+
+            <dd>
+                <div class="container">
+                    @if (Model.Imagens != null)
+                    {
+                        foreach (var imagem in Model.Imagens)
+                        {
+                            if (imagem.ehPrincipal == true)
+                            {
+                                <td>
+                                    <img src="~/Content/uploads/fotosProdutos/@imagem.UrlImagem" width="150" height="150"/>
+                                </td>
+                            }
+                        }
+                    }
+                    <br/><br/>
+                </div>
+
+
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Details)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Details)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Selloff)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Selloff)
+            </dd>
+
+        </dl>
+
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-danger"/> |
+          
+        </div>
+
+    </div>
+
+}
+@Html.ActionLink("Retornar a lista de produtos cadastrados", "ListProducts")

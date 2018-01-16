@@ -10,10 +10,7 @@ namespace Ivan.LojaTudoEletro.Infra.Data.EntityConfig
         {
             HasKey(p => p.ImagemId);
           
-            //relacionamento produto tem várias imagens
-            HasRequired(p => p.Product)
-                .WithMany()
-                .HasForeignKey(p => p.ProductID);
+           
         }
     }
 }

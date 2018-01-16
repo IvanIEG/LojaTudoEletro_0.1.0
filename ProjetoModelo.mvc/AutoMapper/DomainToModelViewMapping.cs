@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using Ivan.LojaTudoEletro.Domain.Entities;
 using Ivan.LojaTudoEletro.ProjetoModelo.MVC.ViewsModels;
 
@@ -15,6 +16,8 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.AutoMapper
         {
             Mapper.CreateMap<Cliente,ClienteViewModel >();
             Mapper.CreateMap<Product,ProductViewModel >();
+            Mapper.CreateMap<Imagem, ImagemViewModel>();
+            //Mapper.CreateMap<List<Imagem>, List<ImagemViewModel>>();
         }
     }
 }

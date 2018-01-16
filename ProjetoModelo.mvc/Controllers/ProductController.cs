@@ -1,23 +1,42 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
+using AutoMapper;
+using Ivan.LojaTudoEletro.Domain.Entities;
+using Ivan.LojaTudoEletro.ProjetoModelo.MVC.ViewsModels;
+using Ivan.LojaTudoEletro.Services.Interfaces;
 
+using FormCollection = Microsoft.Owin.FormCollection;
 
 namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
 {
     public class ProductController : Controller
     {
-        // GET: Product
-        public ActionResult ReturnProductsSellof()
-        {
 
-           
-            return View();
+        readonly IProductServices _productServices;
+
+        public ProductController(IProductServices productServices)
+        {
+            this._productServices = productServices;
+        }
+
+        // GET: Product
+        public ActionResult ListProducts()
+        {
+            var listProductViewModels = Mapper.Map<List<Product>, List<ProductViewModel>>(_productServices.GetAllProducts().ToList());
+
+            return View("ListProducts", listProductViewModels);
         }
 
         // GET: Product/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var product = _productServices.GetProduct(id);
+
+            var productViewModel = Mapper.Map<Product, ProductViewModel>(product);
+
+            return View("Details", productViewModel);
         }
 
         // GET: Product/Create
@@ -26,37 +45,49 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
             return View();
         }
 
-        // POST: Product/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
+
+
+        public ActionResult CreateProduct()
         {
             try
             {
-                // TODO: Add insert logic here
+                var productViewModel = TempData["productViewModelTemp"] as ProductViewModel;
 
-                return RedirectToAction("Index");
+                var productDomain = Mapper.Map<ProductViewModel, Product>(productViewModel);
+
+                _productServices.AddProduct(productDomain);
+
+                return RedirectToAction("ListProducts");
             }
+
             catch
             {
-                return View();
+                return RedirectToAction("Create");
             }
+
+
         }
 
         // GET: Product/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var productViewModel = Mapper.Map<Product, ProductViewModel>(_productServices.GetProduct(id));
+
+
+            return View(productViewModel);
         }
 
         // POST: Product/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, ProductViewModel productViewModel)
         {
             try
             {
-                // TODO: Add update logic here
+                var productDomain = _productServices.GetProduct(id);
 
-                return RedirectToAction("Index");
+                _productServices.EditProduct(productDomain);
+
+                return RedirectToAction("ListProducts");
             }
             catch
             {
@@ -67,20 +98,28 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
         // GET: Product/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+
+            var productViewModel = Mapper.Map<Product, ProductViewModel>(_productServices.GetProduct(id));
+
+            return View(productViewModel);
         }
 
         // POST: Product/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, ProductViewModel product)
         {
             try
             {
-                // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
+                var productDomain = _productServices.GetProduct(id);
+
+                _productServices.DeleteProduct(productDomain);
+
+
+                return RedirectToAction("ListProducts");
             }
-            catch
+
+            catch (Exception error)
             {
                 return View();
             }

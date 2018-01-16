@@ -34,9 +34,7 @@ namespace Ivan.LojaTudoEletro.Infra.Data.Contexto
             modelBuilder.Properties<String>()
             .Configure(p => p.HasColumnType("varchar"));
 
-            modelBuilder.Properties<String>()
-            .Configure(p => p.HasMaxLength(100));
-
+          
             modelBuilder.Configurations.Add(new ClienteConfiguration());
             modelBuilder.Configurations.Add(new ProductConfiguration());
             modelBuilder.Configurations.Add(new ImagemConfiguration());

@@ -1,24 +1,32 @@
-﻿@model Ivan.LojaTudoEletro.Domain.Entities.Product
+﻿@model Ivan.LojaTudoEletro.ProjetoModelo.MVC.ViewsModels.ProductViewModel
 
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Detalhes do produto</h2>
 
 <div>
-    <h4>Product</h4>
+
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Cliente.Nome)
+            @Html.DisplayName("Imagens")
         </dt>
-
+        
+    @foreach (var imagem in Model.Imagens)
+    {
         <dd>
-            @Html.DisplayFor(model => model.Cliente.Nome)
-        </dd>
 
+
+            <td>
+                <img src="~/Content/uploads/fotosProdutos/@imagem.UrlImagem" width="120" height="120"/>
+            </td>
+
+
+        </dd>
+    }
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -44,14 +52,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ImageUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImageUrl)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Details)
         </dt>
 
@@ -70,6 +70,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ProductId }) |
+    @Html.ActionLink("Retornar a lista de produtos cadastrados", "ListProducts")
 </p>

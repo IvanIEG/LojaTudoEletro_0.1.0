@@ -14,19 +14,19 @@
         <dt>
             @Html.DisplayName("Imagens")
         </dt>
-        
-    @foreach (var imagem in Model.Imagens)
-    {
-        <dd>
+
+        @foreach (var imagem in Model.Imagens)
+        {
+            <dd>
 
 
-            <td>
-                <img src="~/Content/uploads/fotosProdutos/@imagem.UrlImagem" width="120" height="120"/>
-            </td>
+                <td>
+                    <img src="~/Content/uploads/fotosProdutos/@imagem.UrlImagem" width="120" height="120" />
+                </td>
 
 
-        </dd>
-    }
+            </dd>
+        }
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -73,3 +73,7 @@
     @Html.ActionLink("Editar", "Edit", new { id = Model.ProductId }) |
     @Html.ActionLink("Retornar a lista de produtos cadastrados", "ListProducts")
 </p>
+@*Trecho para personalizar visual do CRUD de produto aproveitando trecho de código do asp.net*@
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="~/Content/css/Site.css" rel="stylesheet" type="text/css" media="all" />

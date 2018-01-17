@@ -23,7 +23,7 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
 
         public ActionResult Index()
         {
-            var productViewModel = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(_productServices.ReturnProductsSellof());
+            var productViewModel = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(_productServices.GetAllProducts());
 
             return View("Index", productViewModel);
         }

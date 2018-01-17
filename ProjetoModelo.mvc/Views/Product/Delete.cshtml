@@ -17,7 +17,7 @@
 
     <div>
 
-        <hr/>
+        <hr />
         <dl class="dl-horizontal">
 
             <dt>
@@ -33,12 +33,12 @@
                             if (imagem.ehPrincipal == true)
                             {
                                 <td>
-                                    <img src="~/Content/uploads/fotosProdutos/@imagem.UrlImagem" width="150" height="150"/>
+                                    <img src="~/Content/uploads/fotosProdutos/@imagem.UrlImagem" width="150" height="150" />
                                 </td>
                             }
                         }
                     }
-                    <br/><br/>
+                    <br /><br />
                 </div>
 
 
@@ -89,11 +89,16 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Excluir" class="btn btn-danger"/> |
-          
+            <input type="submit" value="Excluir" class="btn btn-danger" /> |
+
         </div>
 
     </div>
 
 }
 @Html.ActionLink("Retornar a lista de produtos cadastrados", "ListProducts")
+
+@*Trecho para personalizar visual do CRUD de produto aproveitando trecho de código do asp.net*@
+<link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="~/Content/css/Site.css" rel="stylesheet" type="text/css" media="all" />

@@ -291,6 +291,7 @@
     <Content Include="Content\css\Site.css" />
     <Content Include="Content\css\slider.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\ImagesLoja\CompraGarantida.jpg" />
     <Content Include="Content\ImagesLoja\pagSeguro.jpg" />
     <Content Include="Content\ImagesLoja\Raspberry.jpg" />
     <Content Include="Content\images\about_img.jpg" />

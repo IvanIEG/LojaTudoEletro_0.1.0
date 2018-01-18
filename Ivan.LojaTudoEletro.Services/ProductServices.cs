@@ -16,15 +16,7 @@ namespace Ivan.LojaTudoEletro.Services
             this._IproductRepository = iProductRepository;
         }
 
-        /// <summary>
-        /// Método responsável por trazer produtos com desconto que serão mostrados na tela inicial.
-        /// </summary>
-        /// <returns>Lista de produtos com desconto(Sellof==true)</returns>
-        public IEnumerable<Product> ReturnProductsSellof()
 
-        {
-            return _IproductRepository.GetAll().Where(p => p.Selloff == true).ToList();
-        }
 
         /// <summary>
         /// Retorna uma lista de todos os produtos cadastrados.
@@ -52,7 +44,7 @@ namespace Ivan.LojaTudoEletro.Services
         /// <returns></returns>
         public Product GetProduct(int id)
         {
-          return  _IproductRepository.GetById(id);
+            return _IproductRepository.GetById(id);
         }
         /// <summary>
         /// Exclui um produto.
@@ -63,7 +55,7 @@ namespace Ivan.LojaTudoEletro.Services
             _IproductRepository.Remove(product);
 
         }
- 
+
         /// <summary>
         /// Retorna detalhes do produto de ac
         /// </summary>
@@ -82,6 +74,37 @@ namespace Ivan.LojaTudoEletro.Services
             _IproductRepository.Update(product);
         }
 
-      
+        /// <summary>
+        /// Responsável por filtrar os últimos 3 ítens marcados como promoção para serem exibidos no slider da Home.
+        /// </summary>
+        /// <returns>Uma lista com os 3 últimos produtos destacados.</returns>
+        public IEnumerable<Product> GetLastsProductsSellofForSlider()
+        {
+            var products = _IproductRepository.GetAll().Where(p => p.Selloff);
+
+            var listProductSellof = new List<Product>();
+
+            foreach (var product in products.Take(3).ToList())
+            {
+                foreach (var imagem in product.Imagens)
+                {
+                    if (imagem.ehPrincipal)
+                    {
+                        var productSellof = new Product();
+
+                        productSellof = product;
+                        //Retorna só a imagem principal do produto.
+                        productSellof.Imagens.RemoveAll(i => i.ehPrincipal != true);
+
+                        listProductSellof.Add(productSellof);
+                    }
+
+                }
+            }
+
+
+            return listProductSellof;
+        }
+
     }
 }

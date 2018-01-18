@@ -5,7 +5,8 @@ namespace Ivan.LojaTudoEletro.Services.Interfaces
 {
     public interface IProductServices
     {
-        IEnumerable<Product> ReturnProductsSellof();
+
+
 
         IEnumerable<Product> GetAllProducts();
 
@@ -18,6 +19,8 @@ namespace Ivan.LojaTudoEletro.Services.Interfaces
         void EditProduct(Product product);
 
         Product DetailsProduct(int id);
+
+        IEnumerable<Product> GetLastsProductsSellofForSlider();
     }
 
 }

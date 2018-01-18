@@ -26,6 +26,8 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
         {
             var listProductViewModels = Mapper.Map<List<Product>, List<ProductViewModel>>(_productServices.GetAllProducts().ToList());
 
+            ViewBag.productsSellof = _productServices.GetLastsProductsSellofForSlider();
+
             return View("ListProducts", listProductViewModels);
         }
 

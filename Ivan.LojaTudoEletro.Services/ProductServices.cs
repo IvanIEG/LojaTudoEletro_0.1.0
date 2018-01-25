@@ -86,24 +86,26 @@ namespace Ivan.LojaTudoEletro.Services
 
             foreach (var product in products.Take(3).ToList())
             {
-                foreach (var imagem in product.Imagens)
-                {
-                    if (imagem.ehPrincipal)
-                    {
-                        var productSellof = new Product();
+                var productSellof = new Product();
 
-                        productSellof = product;
-                        //Retorna só a imagem principal do produto.
-                        productSellof.Imagens.RemoveAll(i => i.ehPrincipal != true);
+                productSellof = product;
 
-                        listProductSellof.Add(productSellof);
-                    }
+                productSellof.Imagens.RemoveAll(i => i.ehPrincipal != true); //Retorna só a imagem principal de cada produto.
 
-                }
+                listProductSellof.Add(productSellof);
+
             }
-
-
             return listProductSellof;
+        }
+
+        /// <summary>
+        /// Retorna os últimos 8 produtos cadastrados.
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Product> GetListLastEightProducts()
+        {
+
+            return _IproductRepository.GetAll().Take(8).ToList();
         }
 
     }

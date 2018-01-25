@@ -24,7 +24,10 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
         public ActionResult Index()
         {
             var productViewModel = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(_productServices.GetAllProducts());
-            ViewBag.productsSellof = _productServices.GetLastsProductsSellofForSlider();
+
+            ViewBag.productsSellofForSlider = _productServices.GetLastsProductsSellofForSlider();
+
+            ViewBag.lastProductsForNews = _productServices.GetListLastEightProducts();
 
             return View("Index", productViewModel);
         }

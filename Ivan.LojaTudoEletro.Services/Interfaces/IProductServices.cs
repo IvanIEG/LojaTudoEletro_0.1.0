@@ -21,6 +21,8 @@ namespace Ivan.LojaTudoEletro.Services.Interfaces
         Product DetailsProduct(int id);
 
         IEnumerable<Product> GetLastsProductsSellofForSlider();
+
+        IEnumerable<Product> GetListLastEightProducts();
     }
 
 }

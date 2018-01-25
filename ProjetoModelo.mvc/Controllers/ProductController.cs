@@ -126,5 +126,16 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
                 return View();
             }
         }
+
+        public ActionResult ProductDetails(int id)
+        {
+            var product = _productServices.GetProduct(id);
+
+            var productViewModel = Mapper.Map<Product, ProductViewModel>(product);
+
+            return View("ProductDetails",productViewModel);
+        }
+
+
     }
 }

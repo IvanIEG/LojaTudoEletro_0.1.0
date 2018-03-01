@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 using Ivan.LojaTudoEletro.ProjetoModelo.MVC.ViewsModels;
-
+using Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers;
 namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
 {
     public class UploadFileController : Controller
@@ -13,9 +13,9 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
         #region Propriedades
 
         string msgRetorno = string.Empty;
-#pragma warning disable CS0414 // The field 'UploadFileController.strStatus' is assigned but its value is never used
+
         string strStatus = "ERRO";
-#pragma warning restore CS0414 // The field 'UploadFileController.strStatus' is assigned but its value is never used
+
 
         #endregion
 
@@ -27,7 +27,7 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
                    ContentType.Equals("image/jpeg");
         }
 
-        public bool isValidContentLenght(int contentLength)
+        public bool IsValidContentLenght(int contentLength)
         {
             return (contentLength / 8192) / 8192 < 8;
         }
@@ -36,21 +36,22 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
         /// </summary>
         /// <param name="fotos">fotos para serem validade</param>
         /// <returns>Json que será usado em uma chamada ajax para validar a imagem na criação de um produto</returns>
-       [HttpPost]
-       [ValidateAntiForgeryToken]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Process(ProductViewModel productViewModel)
         {
-            var cont = 0;
 
             TempData["productViewModelTemp"] = productViewModel;
-           
 
-
-            var imagensFiles = productViewModel.ImagensProduto.ToList();
-
-
-            try
+            if (ModelState.IsValid)
             {
+                string msg = "error";
+                var cont = 0;
+
+
+
+                var imagensFiles = productViewModel.ImagensProduto.ToList();
+
 
                 foreach (var fotosList in imagensFiles)
                 {
@@ -63,7 +64,7 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
                             msgRetorno = "Permitido somente os formatos: JPG, JPEG, PNG e GIF";
 
                         }
-                        else if (!isValidContentLenght(fotosList.ContentLength))
+                        else if (!IsValidContentLenght(fotosList.ContentLength))
                         {
                             msgRetorno = "O tamanho máximo permitido é de 8mb.";
 
@@ -71,10 +72,10 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
                         }
                         else if (fotosList.ContentLength > 0)
                         {
-                            
 
                             var fileName = Path.GetFileName(fotosList.FileName);
                             var path = Path.Combine(Server.MapPath("~/content/uploads/fotosProdutos"), fileName);
+
                             fotosList.SaveAs(path);
 
 
@@ -85,26 +86,21 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
                             }
                             imagem.UrlImagem = fileName;
 
-                           productViewModel.Imagens.Add(imagem);
+                            productViewModel.Imagens.Add(imagem);
+
+                            msg = "ok";
                         }
                     }
+                 
                 }
-
-             
-            }
-
-
-#pragma warning disable CS0168 // The variable 'e' is declared but never used
-            catch (Exception e)
-#pragma warning restore CS0168 // The variable 'e' is declared but never used
-            {
+                return RedirectToAction("CreateProduct", "Product");
 
             }
-
-
-            return RedirectToAction("CreateProduct", "Product");
+            return View("~/views/Product/Create.cshtml",productViewModel);
         }
-
-
+       
     }
+
+
 }
+

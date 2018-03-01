@@ -37,7 +37,7 @@ namespace Ivan.LojaTudoEletro.Domain.Entities
         //ctor - atalho-ConstrutorPadrão
         public Product()
         {
-       
+      
         }
 
 

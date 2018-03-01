@@ -30,7 +30,7 @@ namespace Ivan.LojaTudoEletro.Infra.Data.Repositories
         public void Update(TEntity obj)
         {
             Db.Entry(obj).State = EntityState.Modified;
-
+            Db.SaveChanges();
         }
 
         public void Remove(TEntity obj)

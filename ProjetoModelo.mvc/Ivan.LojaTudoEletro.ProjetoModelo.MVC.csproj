@@ -151,6 +151,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -190,6 +192,7 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Vestris.ResourceLib, Version=1.4.33.0, Culture=neutral, PublicKeyToken=ec632d8ba5e5750d, processorArchitecture=MSIL">
       <HintPath>..\packages\Vestris.ResourceLib.JetBrains.1.4.20150303.0\lib\Net\Vestris.ResourceLib.dll</HintPath>
@@ -263,9 +266,16 @@
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
     <Compile Include="AutoMapper\ViewModelToDomainMappings.cs" />
     <Compile Include="AutoMapper\DomainToModelViewMapping.cs" />
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\CarrinhoDeComprasController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="Controllers\UploadFileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -282,13 +292,32 @@
     <Compile Include="ViewsModels\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\CalcPrecoPrazo.disco" />
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+    <Content Include="Connected Services\ServiceReference1\Ivan.LojaTudoEletro.ProjetoModelo.MVC.ServiceReference1.cResultado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\Ivan.LojaTudoEletro.ProjetoModelo.MVC.ServiceReference1.cResultadoObjeto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\Ivan.LojaTudoEletro.ProjetoModelo.MVC.ServiceReference1.cResultadoServicos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\easy-responsive-tabs.css" />
     <Content Include="Content\css\global.css" />
     <Content Include="Content\css\slider.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\ImagesLoja\CompraGarantida.jpg" />
+    <Content Include="Content\ImagesLoja\LogoTudoEletro.png" />
     <Content Include="Content\ImagesLoja\pagSeguro.jpg" />
     <Content Include="Content\ImagesLoja\Raspberry.jpg" />
     <Content Include="Content\images\about_img.jpg" />
@@ -352,12 +381,22 @@
     <Content Include="Content\js\jquery-1.7.2.min.js" />
     <Content Include="Content\js\jquery.accordion.js" />
     <Content Include="Content\js\jquery.easing.js" />
+    <Content Include="Content\js\Js-Loja\salesController.js" />
     <Content Include="Content\js\move-top.js" />
     <Content Include="Content\js\product-create.js" />
     <Content Include="Content\js\script.js" />
     <Content Include="Content\js\slides.min.jquery.js" />
     <Content Include="Content\js\startstop-slider.js" />
     <Content Include="Content\META-INF\context.xml" />
+    <Content Include="Content\uploads\fotosProdutos\Captura de Tela %281%29.png" />
+    <Content Include="Content\uploads\fotosProdutos\CompilaçãoComVisualStudio2017.png" />
+    <Content Include="Content\uploads\fotosProdutos\FormasDePagamento.gif" />
+    <Content Include="Content\uploads\fotosProdutos\IMG_20122017_141713_0.png" />
+    <Content Include="Content\uploads\fotosProdutos\notebook.jpg" />
+    <Content Include="Content\uploads\fotosProdutos\NotebookFullHD.jpg" />
+    <Content Include="Content\uploads\fotosProdutos\raspberry-pi3-pi-3-model-b-quadcore-12ghz-pronta-entrega-D_NQ_NP_100215-MLB25150209828_112016-O.jpg" />
+    <Content Include="Content\uploads\fotosProdutos\raspberry.jpg" />
+    <Content Include="Content\uploads\fotosProdutos\raspberry3.jpg" />
     <Content Include="Content\WEB-INF\web.xml" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -377,6 +416,7 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Connected Services\ServiceReference1\CalcPrecoPrazo.wsdl" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -397,7 +437,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\UploadFile\Succes.cshtml" />
     <Content Include="Views\Product\ListProducts.cshtml" />
-    <Content Include="Views\Product\Create.cshtml" />
     <Content Include="Views\Product\Delete.cshtml" />
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
@@ -405,10 +444,12 @@
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\Details.cshtml" />
     <Content Include="Views\Product\ProductDetails.cshtml" />
+    <Content Include="Views\Sales\Index.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\uploads\fotosProdutos\" />
+    <Folder Include="Views\CarrinhoDeCompras\" />
     <Folder Include="Views\Clientes\" />
   </ItemGroup>
   <ItemGroup>
@@ -431,6 +472,12 @@
       <Project>{1d7dff37-38d8-43ed-932d-0d612012dc91}</Project>
       <Name>Ivan.LojaTudoEletro.Infra.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

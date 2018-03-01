@@ -7,7 +7,7 @@ using Ivan.LojaTudoEletro.Domain.Entities;
 using Ivan.LojaTudoEletro.ProjetoModelo.MVC.ViewsModels;
 using Ivan.LojaTudoEletro.Services.Interfaces;
 
-using FormCollection = Microsoft.Owin.FormCollection;
+
 
 namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
 {
@@ -51,23 +51,27 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
 
         public ActionResult CreateProduct()
         {
+            var productViewModel = TempData["productViewModelTemp"] as ProductViewModel;
+
+
             try
             {
-                var productViewModel = TempData["productViewModelTemp"] as ProductViewModel;
+                UploadFileController uploadFile = new UploadFileController();
 
                 var productDomain = Mapper.Map<ProductViewModel, Product>(productViewModel);
 
                 _productServices.AddProduct(productDomain);
 
-                return RedirectToAction("ListProducts");
-            }
 
-            catch
+            }
+            catch (Exception e)
             {
-                return RedirectToAction("Create");
+                Console.WriteLine(e);
+
             }
 
 
+            return RedirectToAction("ListProducts");
         }
 
         // GET: Product/Edit/5
@@ -85,7 +89,8 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
         {
             try
             {
-                var productDomain = _productServices.GetProduct(id);
+
+                var productDomain = Mapper.Map<ProductViewModel, Product>(productViewModel);
 
                 _productServices.EditProduct(productDomain);
 
@@ -133,7 +138,7 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
 
             var productViewModel = Mapper.Map<Product, ProductViewModel>(product);
 
-            return View("ProductDetails",productViewModel);
+            return View("ProductDetails", productViewModel);
         }
 
 

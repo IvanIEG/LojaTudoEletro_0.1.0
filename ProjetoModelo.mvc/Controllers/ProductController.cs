@@ -142,5 +142,12 @@ namespace Ivan.LojaTudoEletro.ProjetoModelo.MVC.Controllers
         }
 
 
+        //public ActionResult BuscaPorNome(string nome)
+        //{
+
+
+        //    //return View("ProductDetails", productViewModel);
+        //}
+
     }
 }

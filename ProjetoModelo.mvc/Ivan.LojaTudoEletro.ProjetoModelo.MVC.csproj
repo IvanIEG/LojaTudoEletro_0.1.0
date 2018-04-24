@@ -382,6 +382,7 @@
     <Content Include="Content\js\jquery.accordion.js" />
     <Content Include="Content\js\jquery.easing.js" />
     <Content Include="Content\js\Js-Loja\salesController.js" />
+    <Content Include="Content\js\Js-Loja\topo.js" />
     <Content Include="Content\js\move-top.js" />
     <Content Include="Content\js\product-create.js" />
     <Content Include="Content\js\script.js" />
